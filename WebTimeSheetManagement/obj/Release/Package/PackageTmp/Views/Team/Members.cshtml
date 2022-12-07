@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewBag.Title = "Roles";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h3></h3>
+<h3>Team Details</h3>
+<table id="grid"></table>
+<div id="jqGridPager"></div>
+
+<script>
+    $(function () {
+        $("#grid").jqGrid({
+            url: '@Url.Action("LoadUsersData", "Team")',
+            stype: 'GET',
+            dataType: 'json',
+            colNames: ['RegistrationID', 'Name', 'Username', 'Mobileno', 'EmailID', 'View'],
+            colModel: [
+              { label: "RegistrationID", name: "RegistrationID", hidden: true },
+                { label: "Name", name: "Name", width: 250, align: "left" },
+              { label: "Username", name: "Username", width: 150, align: "left" },
+              { label: "Mobileno", name: "Mobileno", width: 150, align: "left" },
+              { label: "EmailID", name: "EmailID", width: 250, align: "left" },
+               { name: 'RegistrationID', search: false, index: 'RegistrationID', width: 60, sortable: false, formatter: viewLink },
+            ],
+            loadonce: true,
+            sortname: 'RegistrationID',
+            sortorder: "desc",
+            sortable: true,
+            pager: '#jqGridPager',
+            rowNum: 15,
+            rowList: [15, 25, 35, 50],
+            viewrecords: true,
+            height: 50
+        });
+        $('#grid div:not(.ui-jqgrid-titlebar)').width("100%");
+        $('#load_grid').width("130");
+        $('.ui-jqgrid-bdiv').css('height', window.innerHeight * .65);
+        function viewLink(cellValue, options, rowdata, action) {
+            return "<a href='#' class='btn btn-info' onclick=ShowUserDetails('" + rowdata.RegistrationID + "'); >View</a>";
+        }
+        $('#grid').jqGrid('navGrid', '#jqGridPager', { edit: false, add: false, del: false })
+    });
+
+</script>
+
+<script type="text/javascript">
+
+    function ShowUserDetails(ID) {
+        var url = '@Url.Content("~/")' + "Team/UserDetails";
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: '{RegistrationID: "' + ID + '" }',
+            contentType: "application/json; charset=utf-8",
+            dataType: "html",
+            success: function (response) {
+                $('#contentBody').html(response);
+                $('#myModal').modal('show');
+            },
+            failure: function (response) {
+                alert(response.responseText);
+            },
+            error: function (response) {
+                alert(response.responseText);
+            }
+        });
+    }
+</script>
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title"><i class="fa fa-group fa-fw"></i> Member Detail </h4>
+            </div>
+            <div class="modal-body" id="contentBody">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

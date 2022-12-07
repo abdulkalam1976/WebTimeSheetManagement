@@ -1,0 +1,220 @@
+﻿@model WebTimeSheetManagement.Models.TaskMaster
+
+@{
+    ViewBag.Title = "Add";
+    switch (Convert.ToInt16(Session["RoleID"]))
+    {
+        case 1:
+            Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+            break;
+        case 2:
+            Layout = "~/Views/Shared/_LayoutUser.cshtml";
+            break;
+        case 3:
+            Layout = "~/Views/Shared/_LayoutSuperAdmin.cshtml";
+            break;
+        default:
+            break;
+    }
+}
+
+<br />
+
+@*<script>
+    if ('@TempData["TaskMessage"]' != '') {
+        alert('@TempData["TaskMessage"]');
+    }
+</script>*@
+
+
+
+@using (Html.BeginForm("Edit", "Taskmaster", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.TaskID)
+    @Html.HiddenFor(model => model.Createdby)
+    <input id="SavedProjectID" name="SavedProjectID" type="hidden" value="@Model.Projectid" />
+    <input id="SavedStatus" name="SavedStatus" type="hidden" value="@Model.Status" />
+    <input id="SavedPriority" name="SavedPriority" type="hidden" value="@Model.Priority" />
+    <input id="SavedComplexity" name="SavedComplexity" type="hidden" value="@Model.Complexity" />
+
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">Task Details</div>
+            <div class="panel-body">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Title, new { @class = "manadatory" })
+                        @Html.TextBoxFor(model => model.Title, new { @class = "form-control", @maxlength = "500" })
+                        @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Description, new { @class = "control-label" })
+                        @Html.TextAreaFor(model => model.Description, new { @class = "form-control", @style = "height:110px" })
+                        @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Projectid, new { @class = "manadatory" })
+                        @Html.DropDownListFor(m => m.Projectid, new SelectList(string.Empty, "ProjectID", "ProjectName"), new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Projectid, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Scheduledstartdate, htmlAttributes: new { @class = "control-label" })
+                        @Html.TextBoxFor(model => model.Scheduledstartdate, new { @Value = string.Format("{0:yyyy-MM-dd}", Model.Scheduledstartdate) , @class = "form-control", style = "width:200px", @onkeypress = "alert('Choose Schedule Start Date');" })
+                        @Html.ValidationMessageFor(model => model.Scheduledstartdate, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Scheduledenddate, htmlAttributes: new { @class = "control-label" })
+                        @Html.TextBoxFor(model => model.Scheduledenddate, new { @Value = string.Format("{0:yyyy-MM-dd}", Model.Scheduledenddate) , @class = "form-control", style = "width:200px", @onkeypress = "alert('Choose Schedule End Date');" })
+                        @Html.ValidationMessageFor(model => model.Scheduledenddate, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.EstimatedHour, htmlAttributes: new { @class = "control-label" })
+                        @Html.EditorFor(model => model.EstimatedHour, new { htmlAttributes = new { @class = "form-control", style = "width:100px", @onkeydown = "return OnlyNumeric(this);" } })
+                        @Html.ValidationMessageFor(model => model.EstimatedHour, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Complexity, htmlAttributes: new { @class = "control-label" })
+                        @Html.DropDownListFor(m => m.Complexity, new SelectList(string.Empty, "Complexity", "ComplexityName"), new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Complexity, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label" })
+                        @Html.DropDownListFor(m => m.Status, new SelectList(string.Empty, "Status", "StatusName"), new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Priority, htmlAttributes: new { @class = "control-label" })
+                        @Html.DropDownListFor(m => m.Priority, new SelectList(string.Empty, "Priority", "PriorityName"), new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Priority, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Actualstartdate, htmlAttributes: new { @class = "control-label" })
+                        @Html.TextBoxFor(model => model.Actualstartdate, new { @Value = string.Format("{0:yyyy-MM-dd}", Model.Actualstartdate), @class = "form-control", @onkeypress = "alert('Choose Actual Start Date');" })
+                        @Html.ValidationMessageFor(model => model.Actualstartdate, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Actualenddate, htmlAttributes: new { @class = "control-label" })
+                        @Html.TextBoxFor(model => model.Actualenddate, new { @Value = string.Format("{0:yyyy-MM-dd}", Model.Actualenddate), @class = "form-control", @onkeypress = "alert('Choose Actual End Date');" })
+                        @Html.ValidationMessageFor(model => model.Actualenddate, "", new { @class = "text-danger" })
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3">
+                </div>
+
+
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-md-offset-3 col-md-9">
+                            <input type="submit" onclick="return ValidateData();" value="Save Details" class="btn btn-success" />
+                            @Html.ActionLink("Cancel", "Index", "Taskmaster", null, new { @class = "btn btn-danger" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<script type="text/javascript">
+                    $(document).ready(function () {
+                        $.getJSON('@Url.Content("~/")' + "Taskmaster/ListofProjects", function (data) {
+                            var items1 = '';
+                            items1 += "<option value=0" + "" + ">" + "----Select----" + "</option>";
+
+                            $("#Projectid").empty();
+
+                            $.each(data, function (i, Project) {
+                                items1 += "<option value=" + Project.ProjectID + ">" + Project.ProjectName + "</option>";
+                            });
+                            $('#Projectid').html(items1);
+                            $('#Projectid').val($('#SavedProjectID').val());
+                        });
+
+                        $("#Status").empty();
+                        $("#Priority").empty();
+                        $("#Complexity").empty();
+
+                        $.getJSON('@Url.Content("~/")' + "Taskmaster/ListofEnumerations", function (data) {
+                            var st = '';
+                            var pr = '';
+                            var co = '';
+
+                            $.each(data, function (i, Enums) {
+                                switch (Enums.Enumtype) {
+                                    case 1:
+                                        st += "<option value=" + Enums.Enumid + "> " + Enums.Enumdesc + " </option>";
+                                        break;
+                                    case 2:
+                                        pr += "<option value=" + Enums.Enumid + ">" + Enums.Enumdesc + " </option>";
+                                        break;
+                                    case 3:
+                                        co += "<option value=" + Enums.Enumid + ">" + Enums.Enumdesc + " </option>";
+                                        break;
+                                }
+                            });
+
+                            $("#Status").html(st);
+                            $("#Status").val($('#SavedStatus').val()).change();
+                            $("#Priority").html(pr);
+                            $("#Priority").val($('#SavedPriority').val());
+                            $("#Complexity").html(co).change();
+                            $("#Complexity").val($('#SavedComplexity').val());
+                        });
+
+                  
+
+                        $("#Scheduledstartdate").datepicker
+                           ({
+                               dateFormat: "yy-mm-dd",
+                               changeMonth: true,
+                               changeYear: true,
+                               yearRange: "-100:+100"
+                           });
+
+                        $("#Scheduledenddate").datepicker
+                           ({
+                               dateFormat: "yy-mm-dd",
+                               changeMonth: true,
+                               changeYear: true,
+                               yearRange: "-100:+100"
+                           });
+                        $("#Actualstartdate").datepicker
+                           ({
+                               dateFormat: "yy-mm-dd",
+                               changeMonth: true,
+                               changeYear: true,
+                               yearRange: "-100:+100"
+                           });
+
+                        $("#Actualenddate").datepicker
+                           ({
+                               dateFormat: "yy-mm-dd",
+                               changeMonth: true,
+                               changeYear: true,
+                               yearRange: "-100:+100"
+                           });
+
+                    });
+
+                    function OnlyNumeric(evt) {
+                        var charCode = (evt.which) ? evt.which : evt.keyCode
+                        if ((charCode < 48 || charCode > 57)) {
+                            if (charCode == 8 || charCode == 46 || charCode == 0) {
+                                return true;
+                            }
+                            else {
+                                return false;
+                            }
+                        }
+                    }
+
+</script>
+

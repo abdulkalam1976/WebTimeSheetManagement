@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewBag.Title = "Roles";
+    Layout = "~/Views/Shared/_LayoutSuperAdmin.cshtml";
+}
+
+<h3></h3>
+<h3>All Roles</h3>
+<table id="grid"></table>
+<div id="jqGridPager"></div>
+
+<script>
+    $(function () {
+        $("#grid").jqGrid({
+            url: '@Url.Action("LoadRolesData", "AllRoles")',
+            stype: 'GET',
+            dataType: 'json',
+            colNames: ['RegistrationID', 'Name', 'Assign To Admin', 'Remove Role'],
+            colModel: [
+              { label: "RegistrationID", name: "RegistrationID", hidden: true },
+                { label: "Name", name: "Name", width: 300, align: "left" },
+             { name: 'RegistrationID', search: false, index: 'RegistrationID', width: 300, sortable: false, formatter: assignLink },
+               { name: 'RegistrationID', search: false, index: 'RegistrationID', width: 150, sortable: false, formatter: viewLink },
+            ],
+            loadonce: true,
+            sortname: 'RegistrationID',
+            sortorder: "desc",
+            sortable: true,
+            pager: '#jqGridPager',
+            rowNum: 15,
+            rowList: [15, 25, 35, 50],
+            viewrecords: true,
+            height: 50
+        });
+        $('#grid div:not(.ui-jqgrid-titlebar)').width("100%");
+        $('#load_grid').width("130");
+        $('.ui-jqgrid-bdiv').css('height', window.innerHeight * .65);
+        function assignLink(cellValue, options, rowdata, action) {
+            if (rowdata.AssignToAdmin == "*Not Assigned*") {
+                return "<lable class='alert-danger'>*Not Assigned*</lable>";
+            }
+            else {
+
+                return "<lable class='alert-success'>" + rowdata.AssignToAdmin + "</lable>";
+            }
+        }
+
+        function viewLink(cellValue, options, rowdata, action) {
+            if (rowdata.AssignToAdmin == "*Not Assigned*") {
+                return "*Not Assigned*";
+            }
+            else {
+                return "<a href='#' class='btn btn-danger' onclick=Removefromrole('" + rowdata.RegistrationID + "'); >Remove Role</a>";
+            }
+        }
+        $('#grid').jqGrid('navGrid', '#jqGridPager', { edit: false, add: false, del: false })
+    });
+
+   
+</script>
+<script type="text/javascript">
+
+    function Removefromrole(ID) {
+        if (confirm("Are you sure you want to Remove Role ...?")) {
+            Removerole(ID);
+        }
+        else {
+            return false;
+        }
+    }
+    function Removerole(ID) {
+        var url = '@Url.Content("~/")' + "AllRoles/RemovefromRole";
+        $.post(url, { RegistrationID: ID }, function (data) {
+            if (data) {
+                var $grid = jQuery("#grid");
+                var p = $grid.jqGrid("getGridParam");
+
+                p.datatype = "json";
+                $grid.trigger("reloadGrid");
+            }
+            else {
+                alert("Something Went Wrong!");
+            }
+        });
+    }
+</script>

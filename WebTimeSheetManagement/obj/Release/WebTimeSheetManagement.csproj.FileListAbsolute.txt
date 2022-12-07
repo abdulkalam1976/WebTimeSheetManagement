@@ -1,0 +1,293 @@
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\ApplicationInsights.config
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\roslyn\csc.exe
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\roslyn\Microsoft.CodeAnalysis.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\roslyn\Microsoft.CSharp.Core.targets
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\roslyn\Microsoft.VisualBasic.Core.targets
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\roslyn\System.Collections.Immutable.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\roslyn\System.Reflection.Metadata.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\roslyn\vbc.exe
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\roslyn\VBCSCompiler.exe
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\roslyn\VBCSCompiler.exe.config
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\WebTimeSheetManagement.dll.config
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\WebTimeSheetManagement.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\WebTimeSheetManagement.pdb
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Antlr3.Runtime.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\CaptchaMvc.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\ClosedXML.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\DocumentFormat.OpenXml.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\EntityFramework.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\EntityFramework.SqlServer.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.AI.Agent.Intercept.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.AI.DependencyCollector.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.AI.PerfCounterCollector.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.AI.ServerTelemetryChannel.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.AI.Web.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.AI.WindowsServer.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.ApplicationInsights.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.AspNet.Identity.Core.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.AspNet.Identity.Owin.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.Owin.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.Owin.Host.SystemWeb.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.Owin.Security.Cookies.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.Owin.Security.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.Owin.Security.Facebook.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.Owin.Security.Google.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.Owin.Security.OAuth.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.Owin.Security.Twitter.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.Web.Infrastructure.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Newtonsoft.Json.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Owin.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\System.Web.Helpers.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\System.Web.Mvc.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\System.Web.Optimization.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\System.Web.Razor.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\System.Web.WebPages.Deployment.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\System.Web.WebPages.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\System.Web.WebPages.Razor.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\WebGrease.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\WebTimeSheetManagement.Concrete.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\WebTimeSheetManagement.Interface.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\WebTimeSheetManagement.Models.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\System.Linq.Dynamic.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\WebTimeSheetManagement.Concrete.pdb
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\WebTimeSheetManagement.Interface.pdb
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\WebTimeSheetManagement.Models.pdb
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\CaptchaMvc.pdb
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\CaptchaMvc.xml
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\ClosedXML.xml
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Dapper.xml
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.AI.DependencyCollector.xml
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.AI.ServerTelemetryChannel.xml
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.AI.Web.xml
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.AI.WindowsServer.xml
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.ApplicationInsights.xml
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\System.Web.Helpers.xml
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\System.Web.Mvc.xml
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\System.Web.Optimization.xml
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\System.Web.Razor.xml
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\System.Web.WebPages.xml
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\System.Web.WebPages.Deployment.xml
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\System.Web.WebPages.Razor.xml
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Antlr3.Runtime.pdb
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Newtonsoft.Json.xml
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\EntityFramework.xml
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\EntityFramework.SqlServer.xml
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.AspNet.Identity.Core.xml
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.AspNet.Identity.Owin.xml
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.Owin.xml
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.Owin.Host.SystemWeb.xml
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.Owin.Security.xml
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.Owin.Security.Facebook.xml
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.Owin.Security.Cookies.xml
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.Owin.Security.OAuth.xml
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.Owin.Security.Google.xml
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.Owin.Security.Twitter.xml
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\obj\Release\WebTimeSheetManagement.csprojResolveAssemblyReference.cache
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\obj\Release\WebTimeSheetManagement.dll
+G:\Users\Sai\Documents\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\obj\Release\WebTimeSheetManagement.pdb
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\ApplicationInsights.config
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\roslyn\csc.exe
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\roslyn\System.Collections.Immutable.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\roslyn\System.Reflection.Metadata.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\roslyn\vbc.exe
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\roslyn\VBCSCompiler.exe
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\roslyn\VBCSCompiler.exe.config
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\WebTimeSheetManagement.dll.config
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\WebTimeSheetManagement.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\WebTimeSheetManagement.pdb
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Antlr3.Runtime.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\CaptchaMvc.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\ClosedXML.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\DocumentFormat.OpenXml.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\EntityFramework.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\EntityFramework.SqlServer.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.AI.Agent.Intercept.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.AI.DependencyCollector.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.AI.PerfCounterCollector.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.AI.ServerTelemetryChannel.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.AI.Web.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.AI.WindowsServer.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.ApplicationInsights.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.Owin.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.Owin.Security.Cookies.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.Owin.Security.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.Owin.Security.Facebook.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.Owin.Security.Google.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.Owin.Security.Twitter.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.Web.Infrastructure.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Newtonsoft.Json.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Owin.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\System.Web.Helpers.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\System.Web.Mvc.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\System.Web.Optimization.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\System.Web.Razor.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\System.Web.WebPages.Deployment.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\System.Web.WebPages.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\System.Web.WebPages.Razor.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\WebGrease.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\WebTimeSheetManagement.Concrete.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\WebTimeSheetManagement.Interface.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\WebTimeSheetManagement.Models.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\System.Linq.Dynamic.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\WebTimeSheetManagement.Concrete.pdb
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\WebTimeSheetManagement.Interface.pdb
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\WebTimeSheetManagement.Models.pdb
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\CaptchaMvc.pdb
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\CaptchaMvc.xml
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\ClosedXML.xml
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Dapper.xml
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.AI.DependencyCollector.xml
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.AI.ServerTelemetryChannel.xml
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.AI.Web.xml
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.AI.WindowsServer.xml
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.ApplicationInsights.xml
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\System.Web.Helpers.xml
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\System.Web.Mvc.xml
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\System.Web.Optimization.xml
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\System.Web.Razor.xml
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\System.Web.WebPages.xml
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\System.Web.WebPages.Deployment.xml
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\System.Web.WebPages.Razor.xml
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Antlr3.Runtime.pdb
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Newtonsoft.Json.xml
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\EntityFramework.xml
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\EntityFramework.SqlServer.xml
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.Owin.xml
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.Owin.Security.xml
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.Owin.Security.Facebook.xml
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.Owin.Security.Cookies.xml
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.Owin.Security.Google.xml
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.Owin.Security.Twitter.xml
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\obj\Release\WebTimeSheetManagement.csprojResolveAssemblyReference.cache
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\obj\Release\WebTimeSheetManagement.dll
+E:\Visual Studio 2015\Projects\WebTimeSheetManagement\WebTimeSheetManagement\obj\Release\WebTimeSheetManagement.pdb
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\ApplicationInsights.config
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\roslyn\csc.exe
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\roslyn\System.Collections.Immutable.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\roslyn\System.Reflection.Metadata.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\roslyn\vbc.exe
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\roslyn\VBCSCompiler.exe
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\roslyn\VBCSCompiler.exe.config
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\WebTimeSheetManagement.dll.config
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\WebTimeSheetManagement.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\WebTimeSheetManagement.pdb
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Antlr3.Runtime.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\CaptchaMvc.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\ClosedXML.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\DocumentFormat.OpenXml.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Elmah.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Elmah.Mvc.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\EntityFramework.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\EntityFramework.SqlServer.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.AI.Agent.Intercept.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.AI.DependencyCollector.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.AI.Web.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.AI.WindowsServer.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.ApplicationInsights.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.AspNet.Identity.Core.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.Owin.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.Owin.Security.Cookies.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.Owin.Security.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.Owin.Security.Facebook.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.Owin.Security.Google.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.Owin.Security.OAuth.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.Owin.Security.Twitter.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.Web.Infrastructure.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Newtonsoft.Json.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Owin.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\System.Web.Helpers.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\System.Web.Mvc.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\System.Web.Optimization.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\System.Web.Razor.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\System.Web.WebPages.Deployment.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\System.Web.WebPages.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\System.Web.WebPages.Razor.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\WebGrease.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\WebTimeSheetManagement.Concrete.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\WebTimeSheetManagement.Interface.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\WebTimeSheetManagement.Models.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\System.Linq.Dynamic.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\WebTimeSheetManagement.Concrete.pdb
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\WebTimeSheetManagement.Interface.pdb
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\WebTimeSheetManagement.Models.pdb
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\CaptchaMvc.pdb
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\CaptchaMvc.xml
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\ClosedXML.xml
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.AI.DependencyCollector.xml
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.AI.Web.xml
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.AI.WindowsServer.xml
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.ApplicationInsights.xml
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\System.Web.Helpers.xml
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\System.Web.Mvc.xml
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\System.Web.Optimization.xml
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\System.Web.Razor.xml
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\System.Web.WebPages.xml
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\System.Web.WebPages.Deployment.xml
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\System.Web.WebPages.Razor.xml
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Antlr3.Runtime.pdb
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Newtonsoft.Json.xml
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\EntityFramework.xml
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\EntityFramework.SqlServer.xml
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.AspNet.Identity.Core.xml
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.Owin.xml
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.Owin.Security.xml
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.Owin.Security.Facebook.xml
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.Owin.Security.Cookies.xml
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.Owin.Security.OAuth.xml
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.Owin.Security.Google.xml
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.Owin.Security.Twitter.xml
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\obj\Release\WebTimeSheetManagement.csprojResolveAssemblyReference.cache
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\obj\Release\WebTimeSheetManagement.dll
+D:\ProjectDevelopment\WebTimeSheetManagement-master\WebTimeSheetManagement\obj\Release\WebTimeSheetManagement.pdb

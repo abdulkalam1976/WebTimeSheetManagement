@@ -1,0 +1,79 @@
+﻿
+
+
+@{
+    ViewBag.Title = "SubmittedTimeSheet";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h3>All My Submitted Timesheet</h3>
+<table id="grid"></table>
+<div id="jqGridPager"></div>
+
+<script>
+    $(function () {
+        $("#grid").jqGrid({
+            url: '@Url.Action("LoadSubmittedTimeSheetData", "AllTimeSheet")',
+            stype: 'GET',
+            dataType: 'json',
+            colNames: ['TimeSheetID', 'Date', 'Employee', 'Task Name', 'Total Hours', 'Remarks', 'Created On', 'Delete'],
+            colModel: [
+              { label: "TimeSheetID", name: "TimeSheetID", hidden: true },
+                               { label: "Period", name: "Period", width: 100, align: "left" },
+                                 { label: "Employee", name: "Username", width: 150, align: "left" },
+              { label: "Task Name", name: "TaskName", width: 500, align: "left" },
+               { label: "Total Hours", name: "TotalHours", width: 100, align: "center" },
+               { label: "Comment", name: "Comment", width: 350, align: "left" },
+               { label: "CreatedOn", name: "CreatedOn", width: 100, align: "left" },
+               { name: 'TimeSheetID', search: false, index: 'TimeSheetID', width: 60, sortable: false, formatter: delLink }
+            ],
+            loadonce: true,
+            sortname: 'TimeSheetID',
+            sortorder: "desc",
+            sortable: true,
+            pager: '#jqGridPager',
+            rowNum: 15,
+            rowList: [15, 25, 35, 50],
+            viewrecords: true,
+            height: 250
+        });
+        $('#grid div:not(.ui-jqgrid-titlebar)').width("100%");
+        $('#load_grid').width("130");
+        $('.ui-jqgrid-bdiv').css('height', window.innerHeight * .65);
+        function delLink(cellValue, options, rowdata, action) {
+            return "<a href='#'  class='ui-icon ui-icon-trash'  onclick=DeleteData(" + rowdata.TimeSheetID + "); >Delete</a>";
+        }
+        $('#grid').jqGrid('navGrid', '#jqGridPager', { edit: false, add: false, del: false })
+    });
+</script>
+
+
+<script type="text/javascript">
+
+    function DeleteData(ID) {
+        if (confirm("Are you sure you want to delete ...?")) {
+            DeleteSheet(ID);
+        }
+        else {
+            return false;
+        }
+    }
+    function DeleteSheet(ID) {
+        var url = '@Url.Content("~/")' + "TimeSheet/Delete";
+        $.post(url, { TimeSheetID: ID }, function (data) {
+            if (data) {
+                var $grid = jQuery("#grid");
+                var p = $grid.jqGrid("getGridParam");
+
+                p.datatype = "json";
+                $grid.trigger("reloadGrid");
+            }
+            else {
+                alert("Something Went Wrong!");
+            }
+        });
+    }
+</script>
+
+
+

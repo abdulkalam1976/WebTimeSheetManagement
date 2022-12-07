@@ -1,0 +1,50 @@
+﻿
+
+
+@{
+    ViewBag.Title = "RejectedTimeSheet";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+
+
+<h3>All My Rejected Timesheet</h3>
+<table id="grid"></table>
+<div id="jqGridPager"></div>
+
+<script>
+    $(function () {
+        $("#grid").jqGrid({
+            url: '@Url.Action("LoadRejectedTimeSheetData", "AllTimeSheet")',
+            stype: 'GET',
+            dataType: 'json',
+            colNames: ['TimeSheetID', 'Date', 'Employee', 'Task Name', 'Total Hours', 'Rejected By', 'Rejected Date', 'Rejected Remarks'],
+            colModel: [
+              { label: "TimeSheetID", name: "TimeSheetID", hidden: true },
+                              { label: "Period", name: "Period", width: 100, align: "left" },
+                                 { label: "Employee", name: "Username", width: 150, align: "left" },
+              { label: "Task Name", name: "TaskName", width: 500, align: "left" },
+               { label: "Total Hours", name: "TotalHours", width: 100, align: "center" },
+               { label: "ActionTakenBy", name: "ActionTakenBy", width: 150, align: "left" },
+               { label: "ActionTakenOn", name: "ActionTakenOn", width: 100, align: "left" },
+                { label: "ActionTakenRemarks", name: "ActionTakenRemarks", width: 350, align: "left" },
+
+            ],
+            loadonce: true,
+            sortname: 'TimeSheetID',
+            sortorder: "desc",
+            sortable: true,
+            pager: '#jqGridPager',
+            rowNum: 15,
+            rowList: [15, 25, 35, 50],
+            viewrecords: true,
+            height: 250
+        });
+        $('#grid div:not(.ui-jqgrid-titlebar)').width("100%");
+        $('#load_grid').width("130");
+        $('.ui-jqgrid-bdiv').css('height', window.innerHeight * .65);
+
+        $('#grid').jqGrid('navGrid', '#jqGridPager', { edit: false, add: false, del: false })
+    });
+</script>
+

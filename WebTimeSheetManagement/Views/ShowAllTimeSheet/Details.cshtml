@@ -1,0 +1,82 @@
+﻿@model WebTimeSheetManagement.Models.TimeSheetMasterView
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<script src="~/Scripts/ajaxjquery.min.js"></script>
+<script src="~/Scripts/jquery.timesheetprocess.js"></script>
+
+<style>
+    table, th, td {
+        border: 1px solid black;
+    }
+</style>
+
+@Html.HiddenFor(model => model.TimeSheetID)
+<div class="panel panel-default">
+    <div class="panel-heading">Timesheet View</div>
+    <div class="panel-body">
+        <div>
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.Username)
+                    @Html.DisplayFor(model => model.Username)
+                </div>
+            </div>
+            <div>
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.TaskName)
+                    @Html.DisplayFor(model => model.TaskName)
+                </div>
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.Period)
+                    @Html.DisplayFor(model => model.Period)
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.EstimatedHours)
+                    @Html.DisplayFor(model => model.EstimatedHours)
+                </div>
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.TotalHours)
+                    @Html.DisplayFor(model => model.TotalHours)
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.Comment)
+                    @Html.DisplayFor(model => model.Comment)
+                </div>
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.TimeSheetStatus)
+                    @Html.DisplayFor(model => model.TimeSheetStatus)
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">Details</div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-6">
+                @Html.Label("Comment", new { @class = "manadatory", @style = "vertical-align:top" })
+                @Html.TextArea("CommentApprover", new { @class = "form -control", @style = "width:400px", @maxlength = "30", @id = "CommentApprover" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <br />
+            <input type="submit" onclick="return Approvetimesheet();" value="Approve" class="btn btn-success" />
+            <input type="submit" onclick="return Rejecttimesheet();" value="Reject" class="btn btn-success" />
+            @Html.ActionLink("Cancel", "SubmittedTimeSheet", "ShowAllTimeSheet", null, new { @class = "btn btn-danger" })
+        </div>
+    </div>
+</div>
+
+<p>
+    @Html.ActionLink("Back to Main View", "SubmittedTimeSheet", "ShowAllTimeSheet")
+</p>

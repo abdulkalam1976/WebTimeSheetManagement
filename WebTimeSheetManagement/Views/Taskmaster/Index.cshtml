@@ -1,0 +1,179 @@
+﻿@{
+    ViewBag.Title = "Index";
+    switch (Convert.ToInt16(Session["RoleID"]))
+    {
+        case 1:
+            Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+            break;
+        case 2:
+            Layout = "~/Views/Shared/_LayoutUser.cshtml";
+            break;
+        case 3:
+            Layout = "~/Views/Shared/_LayoutSuperAdmin.cshtml";
+            break;
+        default:
+            Response.Redirect("/Login/Login");
+            break;
+    }
+}
+
+
+<h1></h1>
+<div>
+    <input type="hidden" id="IsAdmin" name="IsAdmin" value="@ViewBag.IsAdmin" />
+    <input type="hidden" id="CurrentUser" name="CurrentUser" value="@ViewBag.CurrentUser" />
+</div>
+
+<div class="row">
+    <div class="col-md-offset-0 col-md-12">
+        <a href="~/Taskmaster/Add"><i class="fa fa-edit fa-fw"></i> Add Task</a>
+    </div>
+</div>
+
+<br />
+<table id="grid"></table>
+<div id="jqGridPager"></div>
+
+<script>
+    $(function () {
+        $("#grid").jqGrid({
+            url: '@Url.Action("LoadTaskData", "Taskmaster")',
+            stype: 'GET',
+            dataType: 'json',
+            colNames: ['TaskID', 'Burn', 'Assign', 'Task Name', 'Project Name', 'Schedule Start', 'Schedule End', 'Actual Start', 'Actual End', 'Complexity','Status', 'Priority', 'Est. Hour', 'Created By', 'Edit', 'Details'],
+            colModel: [
+              { label: "TaskID", name: "TaskID", hidden: true },
+              {
+                  name: 'TaskID', search: false, index: 'TaskID', width: 60, align: "center",
+                  sortable: false,
+                  formatter: function (cellvalue, options, rowObject) {
+                      return "<a href='#' class='ui-icon ui-icon-clock' onclick=BurnTask('" + rowObject.TaskID + "'); >Burn</a>";
+                  }, sortable: false, align: 'center', editable: false
+
+              },
+              {
+                  name: 'TaskID', search: false, index: 'TaskID', width: 60, align: "center",
+                  sortable: false,
+                  formatter: function (cellvalue, options, rowObject) {
+                      return "<a href='#' class='ui-icon ui-icon-person' onclick=AssignTask('" + rowObject.TaskID + "'); >Assign</a>";
+                  }, sortable: false, align: 'center',  editable: false
+
+              },
+              { label: "Title", name: "Title", width: 350, align: "left" },
+              { label: "ProjectName", name: "ProjectName", align: "center" },
+               {
+                   name: "Scheduledstartdate", label: "Sch. Start", width: 120, align: "center", sorttype: "date",
+                   formatter: "date", formatoptions: { newformat: "d-M-Y" }
+               },
+              {
+                  name: "Scheduledenddate", label: "Sch. End", width: 115, align: "center", sorttype: "date",
+                  formatter: "date", formatoptions: { newformat: "d-M-Y" }
+              },
+               {
+                   name: "Actualstartdate", label: "Actualstartdate", width: 120, align: "center", sorttype: "date",
+                   formatter: "date", formatoptions: { newformat: "d-M-Y" }
+               },
+              {
+                  name: "Actualenddate", label: "Actualenddate", width: 115, align: "center", sorttype: "date",
+                  formatter: "date", formatoptions: { newformat: "d-M-Y" }
+              },
+              
+                { name: "Complexity", label: "Complexity", width: 100, align: "center" },
+               { name: "Status", label: "Status", width: 100, align: "center" },
+               { name: "Priority", label: "Priority", width: 100, align: "center" },
+               { name: "EstimatedHour", label: "EstimatedHour", width: 100, align: "center" },
+               { name: "CreatedbyName", label: "CreatedbyName", width: 100, align: "center" },
+               { name: 'TaskID', search: false, index: 'TaskID', width: 45, sortable: false, formatter: editLink },
+               { name: 'TaskID', search: false, index: 'TaskID', width: 60, sortable: false, formatter: viewLink }
+            ],
+            loadonce: true,
+            sortname: 'TaskID',
+            sortorder: "desc",
+            sortable: true,
+            pager: '#jqGridPager',
+            rowNum: 15,
+            rowList: [15, 25, 35, 50],
+            viewrecords: true,
+            height: 250
+        });
+        $('#grid div:not(.ui-jqgrid-titlebar)').width("100%");
+        $('#load_grid').width("130");
+        $('.ui-jqgrid-bdiv').css('height', window.innerHeight * .65);
+        function editLink(cellValue, options, rowdata, action) {
+            if ($('#CurrentUser').val() == rowdata.Createdby || $('#IsAdmin').val() == 1)
+                return "<a href='Edit/" + rowdata.TaskID + "' class='ui-icon ui-icon-pencil' ></a>";
+            else
+                return "";
+        }
+        function viewLink(cellValue, options, rowdata, action) {
+            return "<a href='Details/" + rowdata.TaskID + "' class='ui-icon ui-icon-info' ></a>";
+        }
+        $('#grid').jqGrid('navGrid', '#jqGridPager', { edit: false, add: false, del: false })
+
+    });
+</script>
+
+
+<script type="text/javascript">
+    function AssignTask(ID) {
+        $.ajax({
+            type: "GET",
+            data: {TaskID: ID},
+            url: '@Url.Action("Add", "Taskassigned")',
+            contentType: "application/json; charset=utf-8",
+            dataType: "html",
+            success: function (response) {
+                $('#contentBody').html(response);
+                $('#myModal').modal('show');
+            },
+            failure: function (response) {
+                alert(response.responseText);
+            },
+            error: function (response) {
+                alert(response.responseText);
+            }
+        });
+    }
+
+    function BurnTask(ID) {
+        $.ajax({
+            type: "GET",
+            data: { TaskID: ID },
+            url: '@Url.Action("Add", "TimeSheet")',
+            contentType: "application/json; charset=utf-8",
+            dataType: "html",
+            success: function (response) {
+                $('#contentBody').html(response);
+                $('#myModal').modal('show');
+            },
+            failure: function (response) {
+                alert(response.responseText);
+            },
+            error: function (response) {
+                alert(response.responseText);
+            }
+        });
+    }
+
+    
+</script>
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">@ViewBag.ModelHeading</h4>
+            </div>
+            <div class="modal-body" id="contentBody">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+
+</style>

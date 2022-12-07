@@ -1,0 +1,230 @@
+
+7/4/2020 3:25:11 PM
+------------------------------------------------------------------------------------------------
+Controller Name :- Taskassigned
+Action Method Name :- Add
+------------------------------------------------------------------------------------------------
+System.Web.Mvc.ExceptionContext
+Message ---
+{0}The required anti-forgery form field "__RequestVerificationToken" is not present.
+.Net Error ---
+{0}Check MVC Ajax Code For Error
+Source ---
+{0}System.Web.WebPages
+StackTrace ---
+{0}   at System.Web.Helpers.AntiXsrf.TokenValidator.ValidateTokens(HttpContextBase httpContext, IIdentity identity, AntiForgeryToken sessionToken, AntiForgeryToken fieldToken)
+   at System.Web.Helpers.AntiXsrf.AntiForgeryWorker.Validate(HttpContextBase httpContext)
+   at System.Web.Helpers.AntiForgery.Validate()
+   at System.Web.Mvc.ValidateAntiForgeryTokenAttribute.OnAuthorization(AuthorizationContext filterContext)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAuthorizationFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__19(AsyncCallback asyncCallback, Object asyncState)
+TargetSite ---
+{0}Void ValidateTokens(System.Web.HttpContextBase, System.Security.Principal.IIdentity, System.Web.Helpers.AntiXsrf.AntiForgeryToken, System.Web.Helpers.AntiXsrf.AntiForgeryToken)
+
+
+7/4/2020 3:27:15 PM
+------------------------------------------------------------------------------------------------
+Controller Name :- Taskassigned
+Action Method Name :- Add
+------------------------------------------------------------------------------------------------
+System.Web.Mvc.ExceptionContext
+Message ---
+{0}The required anti-forgery form field "__RequestVerificationToken" is not present.
+.Net Error ---
+{0}Check MVC Ajax Code For Error
+Source ---
+{0}System.Web.WebPages
+StackTrace ---
+{0}   at System.Web.Helpers.AntiXsrf.TokenValidator.ValidateTokens(HttpContextBase httpContext, IIdentity identity, AntiForgeryToken sessionToken, AntiForgeryToken fieldToken)
+   at System.Web.Helpers.AntiXsrf.AntiForgeryWorker.Validate(HttpContextBase httpContext)
+   at System.Web.Helpers.AntiForgery.Validate()
+   at System.Web.Mvc.ValidateAntiForgeryTokenAttribute.OnAuthorization(AuthorizationContext filterContext)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAuthorizationFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__19(AsyncCallback asyncCallback, Object asyncState)
+TargetSite ---
+{0}Void ValidateTokens(System.Web.HttpContextBase, System.Security.Principal.IIdentity, System.Web.Helpers.AntiXsrf.AntiForgeryToken, System.Web.Helpers.AntiXsrf.AntiForgeryToken)
+
+
+7/4/2020 3:30:04 PM
+------------------------------------------------------------------------------------------------
+Controller Name :- Taskassigned
+Action Method Name :- Add
+------------------------------------------------------------------------------------------------
+System.Web.Mvc.ExceptionContext
+Message ---
+{0}The required anti-forgery form field "__RequestVerificationToken" is not present.
+.Net Error ---
+{0}Check MVC Ajax Code For Error
+Source ---
+{0}System.Web.WebPages
+StackTrace ---
+{0}   at System.Web.Helpers.AntiXsrf.TokenValidator.ValidateTokens(HttpContextBase httpContext, IIdentity identity, AntiForgeryToken sessionToken, AntiForgeryToken fieldToken)
+   at System.Web.Helpers.AntiXsrf.AntiForgeryWorker.Validate(HttpContextBase httpContext)
+   at System.Web.Helpers.AntiForgery.Validate()
+   at System.Web.Mvc.ValidateAntiForgeryTokenAttribute.OnAuthorization(AuthorizationContext filterContext)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAuthorizationFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__19(AsyncCallback asyncCallback, Object asyncState)
+TargetSite ---
+{0}Void ValidateTokens(System.Web.HttpContextBase, System.Security.Principal.IIdentity, System.Web.Helpers.AntiXsrf.AntiForgeryToken, System.Web.Helpers.AntiXsrf.AntiForgeryToken)
+
+
+7/4/2020 3:31:56 PM
+------------------------------------------------------------------------------------------------
+Controller Name :- Taskassigned
+Action Method Name :- Add
+------------------------------------------------------------------------------------------------
+System.Web.Mvc.ExceptionContext
+Message ---
+{0}The required anti-forgery form field "__RequestVerificationToken" is not present.
+.Net Error ---
+{0}Check MVC Ajax Code For Error
+Source ---
+{0}System.Web.WebPages
+StackTrace ---
+{0}   at System.Web.Helpers.AntiXsrf.TokenValidator.ValidateTokens(HttpContextBase httpContext, IIdentity identity, AntiForgeryToken sessionToken, AntiForgeryToken fieldToken)
+   at System.Web.Helpers.AntiXsrf.AntiForgeryWorker.Validate(HttpContextBase httpContext)
+   at System.Web.Helpers.AntiForgery.Validate()
+   at System.Web.Mvc.ValidateAntiForgeryTokenAttribute.OnAuthorization(AuthorizationContext filterContext)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAuthorizationFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__19(AsyncCallback asyncCallback, Object asyncState)
+TargetSite ---
+{0}Void ValidateTokens(System.Web.HttpContextBase, System.Security.Principal.IIdentity, System.Web.Helpers.AntiXsrf.AntiForgeryToken, System.Web.Helpers.AntiXsrf.AntiForgeryToken)
+
+
+7/4/2020 3:32:32 PM
+------------------------------------------------------------------------------------------------
+Controller Name :- Taskassigned
+Action Method Name :- Add
+------------------------------------------------------------------------------------------------
+System.Web.Mvc.ExceptionContext
+Message ---
+{0}The required anti-forgery form field "__RequestVerificationToken" is not present.
+.Net Error ---
+{0}Check MVC Ajax Code For Error
+Source ---
+{0}System.Web.WebPages
+StackTrace ---
+{0}   at System.Web.Helpers.AntiXsrf.TokenValidator.ValidateTokens(HttpContextBase httpContext, IIdentity identity, AntiForgeryToken sessionToken, AntiForgeryToken fieldToken)
+   at System.Web.Helpers.AntiXsrf.AntiForgeryWorker.Validate(HttpContextBase httpContext)
+   at System.Web.Helpers.AntiForgery.Validate()
+   at System.Web.Mvc.ValidateAntiForgeryTokenAttribute.OnAuthorization(AuthorizationContext filterContext)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAuthorizationFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__19(AsyncCallback asyncCallback, Object asyncState)
+TargetSite ---
+{0}Void ValidateTokens(System.Web.HttpContextBase, System.Security.Principal.IIdentity, System.Web.Helpers.AntiXsrf.AntiForgeryToken, System.Web.Helpers.AntiXsrf.AntiForgeryToken)
+
+
+7/4/2020 3:33:52 PM
+------------------------------------------------------------------------------------------------
+Controller Name :- Taskassigned
+Action Method Name :- Add
+------------------------------------------------------------------------------------------------
+System.Web.Mvc.ExceptionContext
+Message ---
+{0}The required anti-forgery form field "__RequestVerificationToken" is not present.
+.Net Error ---
+{0}Check MVC Ajax Code For Error
+Source ---
+{0}System.Web.WebPages
+StackTrace ---
+{0}   at System.Web.Helpers.AntiXsrf.TokenValidator.ValidateTokens(HttpContextBase httpContext, IIdentity identity, AntiForgeryToken sessionToken, AntiForgeryToken fieldToken)
+   at System.Web.Helpers.AntiXsrf.AntiForgeryWorker.Validate(HttpContextBase httpContext)
+   at System.Web.Helpers.AntiForgery.Validate()
+   at System.Web.Mvc.ValidateAntiForgeryTokenAttribute.OnAuthorization(AuthorizationContext filterContext)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAuthorizationFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__19(AsyncCallback asyncCallback, Object asyncState)
+TargetSite ---
+{0}Void ValidateTokens(System.Web.HttpContextBase, System.Security.Principal.IIdentity, System.Web.Helpers.AntiXsrf.AntiForgeryToken, System.Web.Helpers.AntiXsrf.AntiForgeryToken)
+
+
+7/4/2020 3:36:31 PM
+------------------------------------------------------------------------------------------------
+Controller Name :- Taskassigned
+Action Method Name :- Add
+------------------------------------------------------------------------------------------------
+System.Web.Mvc.ExceptionContext
+Message ---
+{0}The required anti-forgery form field "__RequestVerificationToken" is not present.
+.Net Error ---
+{0}Check MVC Ajax Code For Error
+Source ---
+{0}System.Web.WebPages
+StackTrace ---
+{0}   at System.Web.Helpers.AntiXsrf.TokenValidator.ValidateTokens(HttpContextBase httpContext, IIdentity identity, AntiForgeryToken sessionToken, AntiForgeryToken fieldToken)
+   at System.Web.Helpers.AntiXsrf.AntiForgeryWorker.Validate(HttpContextBase httpContext)
+   at System.Web.Helpers.AntiForgery.Validate()
+   at System.Web.Mvc.ValidateAntiForgeryTokenAttribute.OnAuthorization(AuthorizationContext filterContext)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAuthorizationFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__19(AsyncCallback asyncCallback, Object asyncState)
+TargetSite ---
+{0}Void ValidateTokens(System.Web.HttpContextBase, System.Security.Principal.IIdentity, System.Web.Helpers.AntiXsrf.AntiForgeryToken, System.Web.Helpers.AntiXsrf.AntiForgeryToken)
+
+
+7/4/2020 3:37:58 PM
+------------------------------------------------------------------------------------------------
+Controller Name :- Taskassigned
+Action Method Name :- Add
+------------------------------------------------------------------------------------------------
+System.Web.Mvc.ExceptionContext
+Message ---
+{0}The required anti-forgery form field "__RequestVerificationToken" is not present.
+.Net Error ---
+{0}Check MVC Ajax Code For Error
+Source ---
+{0}System.Web.WebPages
+StackTrace ---
+{0}   at System.Web.Helpers.AntiXsrf.TokenValidator.ValidateTokens(HttpContextBase httpContext, IIdentity identity, AntiForgeryToken sessionToken, AntiForgeryToken fieldToken)
+   at System.Web.Helpers.AntiXsrf.AntiForgeryWorker.Validate(HttpContextBase httpContext)
+   at System.Web.Helpers.AntiForgery.Validate()
+   at System.Web.Mvc.ValidateAntiForgeryTokenAttribute.OnAuthorization(AuthorizationContext filterContext)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAuthorizationFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__19(AsyncCallback asyncCallback, Object asyncState)
+TargetSite ---
+{0}Void ValidateTokens(System.Web.HttpContextBase, System.Security.Principal.IIdentity, System.Web.Helpers.AntiXsrf.AntiForgeryToken, System.Web.Helpers.AntiXsrf.AntiForgeryToken)
+
+
+7/4/2020 3:39:17 PM
+------------------------------------------------------------------------------------------------
+Controller Name :- Taskassigned
+Action Method Name :- Add
+------------------------------------------------------------------------------------------------
+System.Web.Mvc.ExceptionContext
+Message ---
+{0}The required anti-forgery form field "__RequestVerificationToken" is not present.
+.Net Error ---
+{0}Check MVC Ajax Code For Error
+Source ---
+{0}System.Web.WebPages
+StackTrace ---
+{0}   at System.Web.Helpers.AntiXsrf.TokenValidator.ValidateTokens(HttpContextBase httpContext, IIdentity identity, AntiForgeryToken sessionToken, AntiForgeryToken fieldToken)
+   at System.Web.Helpers.AntiXsrf.AntiForgeryWorker.Validate(HttpContextBase httpContext)
+   at System.Web.Helpers.AntiForgery.Validate()
+   at System.Web.Mvc.ValidateAntiForgeryTokenAttribute.OnAuthorization(AuthorizationContext filterContext)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAuthorizationFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__19(AsyncCallback asyncCallback, Object asyncState)
+TargetSite ---
+{0}Void ValidateTokens(System.Web.HttpContextBase, System.Security.Principal.IIdentity, System.Web.Helpers.AntiXsrf.AntiForgeryToken, System.Web.Helpers.AntiXsrf.AntiForgeryToken)
+
+
+7/4/2020 3:59:44 PM
+------------------------------------------------------------------------------------------------
+Controller Name :- Taskassigned
+Action Method Name :- Add
+------------------------------------------------------------------------------------------------
+System.Web.Mvc.ExceptionContext
+Message ---
+{0}The required anti-forgery form field "__RequestVerificationToken" is not present.
+.Net Error ---
+{0}Check MVC Ajax Code For Error
+Source ---
+{0}System.Web.WebPages
+StackTrace ---
+{0}   at System.Web.Helpers.AntiXsrf.TokenValidator.ValidateTokens(HttpContextBase httpContext, IIdentity identity, AntiForgeryToken sessionToken, AntiForgeryToken fieldToken)
+   at System.Web.Helpers.AntiXsrf.AntiForgeryWorker.Validate(HttpContextBase httpContext)
+   at System.Web.Helpers.AntiForgery.Validate()
+   at System.Web.Mvc.ValidateAntiForgeryTokenAttribute.OnAuthorization(AuthorizationContext filterContext)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAuthorizationFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__19(AsyncCallback asyncCallback, Object asyncState)
+TargetSite ---
+{0}Void ValidateTokens(System.Web.HttpContextBase, System.Security.Principal.IIdentity, System.Web.Helpers.AntiXsrf.AntiForgeryToken, System.Web.Helpers.AntiXsrf.AntiForgeryToken)
+

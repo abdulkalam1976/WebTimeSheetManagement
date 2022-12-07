@@ -1,0 +1,245 @@
+﻿@{
+    ViewBag.Title = "ChartInMVC";
+}
+
+<div class="col-lg-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">Burn Hour</div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-3">
+                    @Html.Label("From Date", new { @class = "manadatory" })
+                    <input id="FromDate" onkeypress="return false; alert('Choose From Date');" class="form-control" autocomplete="off" type="text" />
+                </div>
+                <div class="col-md-3">
+                    @Html.Label("To Date", new { @class = "manadatory" })
+                    <input id="ToDate" onkeypress="return false; alert('Choose To Date');" class="form-control" autocomplete="off" type="text" />
+                </div>
+                <div class="col-lg-2" style="position:relative; bottom:-25px">
+                    <a href='#' class='fa fa-table fa-2x' onclick='ShowEstimatedVsBurnDataGrid();'></a>
+                    <a href='#' class='fa fa-bar-chart fa-2x' onclick='ShowBurnData();'></a>
+                </div>
+                
+            </div>
+            <br />
+            <table id="grid"></table>
+            <div id="jqGridPager"></div>
+           <div Style="font-family: Corbel; font-size: small ;text-align:center " class="row">
+                <div style="width:100%;height:100%">
+                    <canvas id="myChart" style="padding: 0;margin: auto;display: block; "> </canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#FromDate").datepicker
+                         ({
+                             dateFormat: "dd/mm/yy",
+                             changeMonth: true,
+                             changeYear: true,
+                             yearRange: "-100:+100"
+                         });
+        $("#ToDate").datepicker
+                         ({
+                             dateFormat: "dd/mm/yy",
+                             changeMonth: true,
+                             changeYear: true,
+                             yearRange: "-100:+100"
+                         });
+
+
+        //Set From Date and To Date while loading
+
+        var now = new Date();
+        
+        var formatDateComponent = function (dateComponent) {
+            return (dateComponent < 10 ? '0' : '') + dateComponent;
+        };
+
+        var formatDate = function (date) {
+            return  formatDateComponent(date.getDate()) + '/' + formatDateComponent(date.getMonth()+1) + '/' + date.getFullYear();
+        };
+
+        var firstDay = new Date(now.getFullYear(), now.getMonth() , 1);
+        var lastDay = new Date(now.getFullYear(), now.getMonth() + 1, 0);
+        $("#FromDate").val(formatDate(firstDay));
+        $("#ToDate").val(formatDate(lastDay));
+        ShowEstimatedVsBurnDataGrid();
+
+    });
+</script>
+
+<script>
+    //function ShowBurnData() {
+    //    $("#grid").hide();
+    //    $("#jqGridPager").hide();
+    //    $("#myChart").show();
+    //    $("#gbox_grid").hide();
+    //        //Validate Date
+    //        // regular expression to match required date format
+    //        re = /^\d{1,2}\/\d{1,2}\/\d{4}$/;
+
+    //        if ($('#FromDate').val() != '' && !$('#FromDate').val().match(re)) {
+    //            alert("Invalid From Date");
+    //            return false;
+    //        }
+
+    //        if ($('#ToDate').val() != '' && !$('#ToDate').val().match(re)) {
+    //            alert("Invalid To Date");
+    //            return false;
+    //        }
+
+    //        var dateSplit = $('#FromDate').val().split('/');
+    //        var dateSplit2 = $('#ToDate').val().split('/');
+    //        var newFromDate = dateSplit[1] + '/' + dateSplit[0] + '/' + dateSplit[2];
+    //        var newToDate = dateSplit2[1] + '/' + dateSplit2[0] + '/' + dateSplit2[2];
+
+    //        $.ajax({
+    //            type: "POST",
+    //            url: "/Admin/DisplayBurnChart",
+    //            data: { fromdate: newFromDate, todate: newToDate, UserID: 0 },
+    //            dataType: "json",
+    //            success: function (chData) {
+    //                var aData = chData;
+    //                var aLabels = aData[0];
+    //                var aDatasets1 = aData[1];
+    //                var dataT = {
+    //                    labels: aLabels,
+    //                    datasets: [{
+    //                        label: "Burn Hour Data",
+    //                        data: aDatasets1,
+    //                        fill: false,
+    //                        backgroundColor: ["rgba(54, 162, 235, 0.2)", "rgba(255, 99, 132, 0.2)", "rgba(255, 159, 64, 0.2)", "rgba(255, 205, 86, 0.2)", "rgba(75, 192, 192, 0.2)", "rgba(153, 102, 255, 0.2)", "rgba(201, 203, 207, 0.2)"],
+    //                        borderColor: ["rgb(54, 162, 235)", "rgb(255, 99, 132)", "rgb(255, 159, 64)", "rgb(255, 205, 86)", "rgb(75, 192, 192)", "rgb(153, 102, 255)", "rgb(201, 203, 207)"],
+    //                        borderWidth: 1
+    //                    }]
+    //                };
+    //                var ctx = $("#myChart").get(0).getContext("2d");
+    //                var myNewChart = new Chart(ctx, {
+    //                    type: 'bar',
+    //                    data: dataT,
+    //                    options: {
+    //                        responsive: true,
+    //                        title: { display: true, text: 'Employee Burn Hour' },
+    //                        legend: { position: 'bottom' },
+    //                        scales: {
+    //                            xAxes: [{ gridLines: { display: false }, display: true, scaleLabel: { display: false, labelString: '' } }],
+    //                            yAxes: [{ gridLines: { display: false }, display: true, scaleLabel: { display: false, labelString: '' }, ticks: { stepSize: 150, beginAtZero: true } }]
+    //                        },
+    //                    }
+    //                });
+    //            }
+    //        });
+    //    }
+
+    @*function ShowBurnDataGrid() {
+        $("#grid").show();
+        $("#jqGridPager").show();
+        $("#gbox_grid").show();
+        $("#myChart").hide();
+        
+        
+            //Validate Date
+            // regular expression to match required date format
+            re = /^\d{1,2}\/\d{1,2}\/\d{4}$/;
+
+            if ($('#FromDate').val() != '' && !$('#FromDate').val().match(re)) {
+                alert("Invalid From Date");
+                return false;
+            }
+
+            if ($('#ToDate').val() != '' && !$('#ToDate').val().match(re)) {
+                alert("Invalid To Date");
+                return false;
+            }
+
+            var dateSplit = $('#FromDate').val().split('/');
+            var dateSplit2 = $('#ToDate').val().split('/');
+            var newFromDate = dateSplit[1] + '/' + dateSplit[0] + '/' + dateSplit[2];
+            var newToDate = dateSplit2[1] + '/' + dateSplit2[0] + '/' + dateSplit2[2];
+
+            //Updated with format how you're getting from web service.
+            var mydata = [{"fromdate": newFromDate, "todate": newToDate, "UserID": 0 }];
+
+            $("#grid").jqGrid({
+                url: '@Url.Action("DisplayBurnData", "Admin")',
+                postData: { fromdate: newFromDate, todate: newToDate, UserID: 0 },
+                stype: 'GET',
+                dataType: 'json',
+                colNames: ['UserName', 'Burn Hours'],
+                colModel: [
+                    { label: "UserName", name: "UserName", width: 400, align: "left" },
+                  { label: "TotalHours", name: "TotalHours", width: 120, align: "center" },
+                ],
+                loadonce: true,
+                sortname: 'UserName',
+                sortorder: "asc",
+                sortable: true,
+                pager: '#jqGridPager',
+                rowNum: 15,
+                rowList: [15, 25, 35, 50],
+                viewrecords: true,
+                height: 50
+            });
+            $('#grid div:not(.ui-jqgrid-titlebar)').width("100%");
+            $('#load_grid').width("130");
+            $('.ui-jqgrid-bdiv').css('height', window.innerHeight * .65);
+            $('#grid').jqGrid('navGrid', '#jqGridPager', { edit: false, add: false, del: false })
+    }*@
+
+    function ShowEstimatedVsBurnDataGrid() {
+        $("#grid").show();
+        $("#jqGridPager").show();
+        $("#gbox_grid").show();
+        $("#myChart").hide();
+
+
+        //Validate Date
+        // regular expression to match required date format
+        re = /^\d{1,2}\/\d{1,2}\/\d{4}$/;
+
+        if ($('#FromDate').val() != '' && !$('#FromDate').val().match(re)) {
+            alert("Invalid From Date");
+            return false;
+        }
+
+        if ($('#ToDate').val() != '' && !$('#ToDate').val().match(re)) {
+            alert("Invalid To Date");
+            return false;
+        }
+
+        var dateSplit = $('#FromDate').val().split('/');
+        var dateSplit2 = $('#ToDate').val().split('/');
+        var newFromDate = dateSplit[1] + '/' + dateSplit[0] + '/' + dateSplit[2];
+        var newToDate = dateSplit2[1] + '/' + dateSplit2[0] + '/' + dateSplit2[2];
+
+        $("#grid").jqGrid({
+            url: '@Url.Action("DisplayBurnHourAgainstEstimated", "Admin")',
+            postData: { fromdate: newFromDate, todate: newToDate, UserID: 0 },
+            stype: 'GET',
+            dataType: 'json',
+            colNames: ['UserName', 'Estimated Hours', 'Burn Hours'],
+            colModel: [
+                { label: "UserName", name: "UserName", width: 400, align: "left" },
+                { label: "EstimatedHour", name: "EstimatedHour", width: 150, align: "left" },
+              { label: "TotalHours", name: "TotalHours", width: 120, align: "center" },
+            ],
+            loadonce: true,
+            sortname: 'UserName',
+            sortorder: "asc",
+            sortable: true,
+            pager: '#jqGridPager',
+            rowNum: 15,
+            rowList: [15, 25, 35, 50],
+            viewrecords: true,
+            height: 50
+        });
+        $('#grid div:not(.ui-jqgrid-titlebar)').width("100%");
+        $('#load_grid').width("130");
+        $('.ui-jqgrid-bdiv').css('height', window.innerHeight * .65);
+        $('#grid').jqGrid('navGrid', '#jqGridPager', { edit: false, add: false, del: false })
+    }
+</script>

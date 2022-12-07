@@ -1,0 +1,196 @@
+﻿@model WebTimeSheetManagement.Models.TaskMasterModelView
+
+@{
+    ViewBag.Title = "View";
+    switch (Convert.ToInt16(Session["RoleID"]))
+    {
+        case 1:
+            Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+            break;
+        case 2:
+            Layout = "~/Views/Shared/_LayoutUser.cshtml";
+            break;
+        case 3:
+            Layout = "~/Views/Shared/_LayoutSuperAdmin.cshtml";
+            break;
+        default:
+            break;
+
+    }
+}
+@Html.HiddenFor(model => model.TaskID)
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">Task View</div>
+    <div class="panel-body">
+        <div>
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.Title)
+                    @Html.DisplayFor(model => model.Title)
+                </div>
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.Description)
+                    @Html.DisplayFor(model => model.Description)
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.Scheduledstartdate)
+                    <text>@string.Format("{0:dd/MM/yyyy}", @Model.Scheduledstartdate) </text>
+                </div>
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.Scheduledenddate)
+                    <text>@string.Format("{0:dd/MM/yyyy}", @Model.Scheduledenddate) </text>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.Complexity)
+                    @Html.DisplayFor(model => model.Complexity)
+                </div>
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.EstimatedHour)
+                    @Html.DisplayFor(model => model.EstimatedHour)
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.Actualstartdate)
+                    <text>@string.Format("{0:dd/MM/yyyy}", @Model.Actualstartdate) </text>
+                </div>
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.Actualenddate)
+                    <text>@string.Format("{0:dd/MM/yyyy}", @Model.Actualenddate) </text>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.Status)
+                    @Html.DisplayFor(model => model.Status)
+                </div>
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.Priority)
+                    @Html.DisplayFor(model => model.Priority)
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.Createdby)
+                    @Html.DisplayFor(model => model.CreatedbyName)
+                </div>
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.Createddate)
+                    <text>@Model.Createddate.ToString("dd/MM/yyyy hh:mm:ss tt")</text>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">Assigned Employee</div>
+    <div class="panel-body">
+        <table id="taskassign" class="table table-bordered" style="margin-top:10px;">
+            <thead class="bg-danger text-center text-white">
+                <tr>
+                    <th>Employee</th>
+                    <th>Assigned date</th>
+                    <th>Assigned By</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">Timesheet</div>
+    <div class="panel-body">
+        <table id="tasktimesheet" class="table table-bordered" style="margin-top:10px;">
+            <thead class="bg-danger text-center text-white">
+                <tr>
+                    <th>Employee</th>
+                    <th>Timesheet date</th>
+                    <th>Hours Spent</th>
+                    <th>Remarks</th>
+                    <th>Status</th>
+                    <th>Action By</th>
+                    <th>Action Date</th>
+                    <th>Action Remarks</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<script>
+
+    $(document).ready(function () {
+        function getAllData() {
+            $.ajax({
+                url: '@Url.Action("LoadTaskAssignedData", "Taskassigned")',
+                data: { TaskID: $('#TaskID').val() },
+                dataType: "json",
+                method: 'GET',
+                success: function (data) {
+                    for (var i = 0; i < data.length; i++) {
+                        $("#taskassign").find("tbody").append($("<tr id='myTr" + data[i].TaskAssignedID + "'>")
+                            .append($("<td>").text(data[i].UserName))
+                            .append($("<td>").text(ToJavaScriptDate(data[i].Assigneddate)))
+                            .append($("<td>").text(data[i].AssignedByName))
+                            );
+                    }
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+
+            $.ajax({
+                url: '@Url.Action("LoadTaskBurnData", "TimeSheet")',
+                data: { TaskID: $('#TaskID').val() },
+                dataType: "json",
+                method: 'GET',
+                success: function (data) {
+                    for (var i = 0; i < data.length; i++) {
+                        $("#tasktimesheet").find("tbody").append($("<tr id='myTr" + data[i].TimeSheetID + "'>")
+                            .append($("<td style='display:none;'>").text(data[i].TimeSheetID))
+                            .append($("<td>").text(data[i].Username))
+                            .append($("<td>").text(data[i].Period))
+                            .append($("<td>").text(data[i].TotalHours))
+                            .append($("<td>").text(data[i].Comment))
+                            .append($("<td>").text(data[i].TimeSheetStatus))
+                            .append($("<td>").text(data[i].ActionTakenBy))
+                            .append($("<td>").text(data[i].ActionTakenOn))
+                            .append($("<td>").text(data[i].ActionTakenRemarks))
+                            );
+                    }
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+
+        }
+
+        getAllData();
+    });
+
+    function ToJavaScriptDate(value) {
+        var pattern = /Date\(([^)]+)\)/;
+        var results = pattern.exec(value);
+        var dt = new Date(parseFloat(results[1]));
+        return dt.getDate() + "/" + (dt.getMonth() + 1) + "/" + dt.getFullYear();
+    }
+
+</script>
+
+
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

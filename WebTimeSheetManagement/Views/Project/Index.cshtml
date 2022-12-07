@@ -1,0 +1,90 @@
+﻿@{
+    ViewBag.Title = "Index";
+    switch (Convert.ToInt16(Session["RoleID"]))
+    {
+        case 1:
+            Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+            break;
+        case 2:
+            Layout = "~/Views/Shared/_LayoutUser.cshtml";
+            break;
+        case 3:
+            Layout = "~/Views/Shared/_LayoutSuperAdmin.cshtml";
+            break;
+        default:
+            Response.Redirect("/Login/Login");
+            break;
+    }
+}
+
+<h3>Projects</h3>
+
+<div class="row">
+    <div class="col-md-offset-0 col-md-12">
+        <a href="~/Project/Add"><i class="fa fa-edit fa-fw"></i> Add Project</a>
+    </div>
+</div>
+<h3></h3>
+<table id="grid"></table>
+<div id="jqGridPager"></div>
+
+<script>
+    $(function () {
+        $("#grid").jqGrid({
+            url: '@Url.Action("LoadProjectData", "Project")',
+            stype: 'GET',
+            dataType: 'json',
+            colNames: ['ProjectID', 'Project Code', 'Project Name', 'Delete'],
+            colModel: [
+              { label: "ProjectID", name: "ProjectID", hidden: true },
+                { label: "ProjectCode", name: "ProjectCode", width: 130, align: "left" },
+              { label: "ProjectName", name: "ProjectName", width: 450, align: "left" },
+               { name: 'ProjectID', search: false, index: 'ProjectID', width: 60, sortable: false, formatter: viewLink },
+            ],
+            loadonce: true,
+            sortname: 'TimeSheetID',
+            sortorder: "desc",
+            sortable: true,
+            pager: '#jqGridPager',
+            rowNum: 15,
+            rowList: [15, 25, 35, 50],
+            viewrecords: true,
+            height: 50
+        });
+        $('#grid div:not(.ui-jqgrid-titlebar)').width("100%");
+        $('#load_grid').width("130");
+        $('.ui-jqgrid-bdiv').css('height', window.innerHeight * .65);
+        function viewLink(cellValue, options, rowdata, action) {
+            return "<a href='#' class='ui-icon ui-icon-trash' onclick=DeleteData(" + rowdata.ProjectID + "); >Delete</a>";
+        }
+        $('#grid').jqGrid('navGrid', '#jqGridPager', { edit: false, add: false, del: false })
+    });
+</script>
+
+
+<script type="text/javascript">
+
+    function DeleteData(ID) {
+        if (confirm("Are you sure you want to delete ...?")) {
+            DeleteSheet(ID);
+        }
+        else {
+            return false;
+        }
+    }
+    function DeleteSheet(ID) {
+        var url = '@Url.Content("~/")' + "Project/Delete";
+        $.post(url, { ProjectID: ID }, function (data) {
+            if (data) {
+                var $grid = jQuery("#grid");
+                var p = $grid.jqGrid("getGridParam");
+
+                p.datatype = "json";
+                $grid.trigger("reloadGrid");
+            }
+            else {
+                alert("This Project cannot be deleted it is already in use!");
+            }
+        });
+    }
+</script>

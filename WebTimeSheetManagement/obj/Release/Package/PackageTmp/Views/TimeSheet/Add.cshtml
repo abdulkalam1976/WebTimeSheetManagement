@@ -1,0 +1,213 @@
+﻿@model WebTimeSheetManagement.Models.TimeSheetDetails
+@{
+    ViewBag.Title = "Add";
+}
+
+<script src="~/Scripts/jquery.timecard.js"></script>
+
+<div>
+    <input type="hidden" id="CurrentTaskId" name="CurrentTaskId" value="@ViewBag.TaskID" />
+    <input type="hidden" id="CurrentUser" name="CurrentUser" value="@ViewBag.CurrentUser" />
+    <input type="hidden" id="CurrentUserName" name="CurrentUserName" value="@ViewBag.CurrentUserName" />
+</div>
+
+
+<div class="row">
+    <div class="panel-body">
+        <div class="col-md-3">
+            @Html.Label("From Date", new { @class = "manadatory" })
+            <input id="FromDate" onkeypress="return false; alert('Choose From Date');" class="form-control" autocomplete = "off" type="text" />
+        </div>
+        <div class="col-md-2">
+            @Html.LabelFor(model => model.Hours, htmlAttributes: new { @class = "manadatory" })
+            @Html.EditorFor(model => model.Hours, new { htmlAttributes = new { @class = "form-control", style = "width:100px", @onkeydown = "return OnlyNumeric(this);" } })
+            @Html.ValidationMessageFor(model => model.Hours, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-6">
+            @Html.LabelFor(model => model.Remarks)
+            @Html.TextBoxFor(model => model.Remarks, new { @class = "form-control", @maxlength = "500" })
+            @Html.ValidationMessageFor(model => model.Remarks, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-1" style="position:relative; bottom:-25px">
+            <a href='#' class='btn btn-info' onclick='SaveTimesheet();'>Save</a>
+        </div>
+    </div>
+
+
+    <table id="tasktimesheet" class="table table-bordered" style="margin-top:10px;">
+        <thead class="bg-danger text-center text-white">
+            <tr>
+                <th>User Name</th>
+                <th>Timesheet date</th>
+                <th>Hours Spent</th>
+                <th>Remarks</th>
+                <th>Status</th>
+                <th>Action By</th>
+                <th>Action Date</th>
+                <th>Action Remarks</th>
+                <th>Revoke</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+
+
+<script>
+
+    $(document).ready(function () {
+
+        $("#FromDate").datepicker
+                       ({
+                           dateFormat: "dd/mm/yy",
+                           changeMonth: true,
+                           changeYear: true,
+                           yearRange: "-100:+100"
+                       });
+
+        function getAllData() {
+            $.ajax({
+                url: '@Url.Content("~/")' + "/TimeSheet/LoadTaskBurnData",
+                data: { TaskID: $('#CurrentTaskId').val() },
+                dataType: "json",
+                method: 'GET',
+                success: function (data) {
+                    for (var i = 0; i < data.length; i++) {
+                        $("#tasktimesheet").find("tbody").append($("<tr id='myTr" + data[i].TimeSheetID + "'>")
+                            .append($("<td style='display:none;'>").text(data[i].TimeSheetID))
+                            .append($("<td>").text(data[i].Username))
+                            .append($("<td>").text(data[i].Period))
+                            .append($("<td>").text(data[i].TotalHours))
+                            .append($("<td>").text(data[i].Comment))
+                            .append($("<td>").text(data[i].TimeSheetStatus))
+                            .append($("<td>").text(data[i].ActionTakenBy))
+                            .append($("<td>").text(data[i].ActionTakenOn))
+                            .append($("<td>").text(data[i].ActionTakenRemarks))
+                            .append($("<td" + (data[i].TimeSheetStatus == "Submitted" ? "" : " style='display:none;'") + ">").html("<a href='#' class='ui-icon ui-icon-circle-close' onclick='RevokeTimesheet(" + data[i].TimeSheetID + ");' >Delete</a>"))
+                            );
+                    }
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+        }
+
+        getAllData();
+    });
+
+    function ToJavaScriptDate(value) {
+        var pattern = /Date\(([^)]+)\)/;
+        var results = pattern.exec(value);
+        var dt = new Date(parseFloat(results[1]));
+        return dt.getDate() + "/" + (dt.getMonth() + 1) + "/" + dt.getFullYear();
+    }
+
+
+
+</script>
+
+
+<script type="text/javascript">
+
+    function GetCurrentDate() {
+        var dt = new Date();
+        return dt.getDate() + "/" + (dt.getMonth() + 1) + "/" + dt.getFullYear();
+    }
+
+    function Validate() {
+        var t = 'N';
+
+        if (parseInt($('#Hours').val()) <= 0) {
+            alert("Invalid Hours");
+            t = "Invalid";
+        }
+
+        //// regular expression to match required date format
+        //re = /^\d{1,2}\/\d{1,2}\/\d{4}$/;
+
+        //if ($('#FromDate').val() != '' && !$('#FromDate').val().match(re)) {
+        //    alert("Invalid Date");
+        //    t = "Invalid";
+        //}
+
+        return t;
+    }
+
+
+    function SaveTimesheet() {
+
+        if (Validate() == "Invalid") {
+            return false;
+        }
+        else {
+            var TimeSheet = {};
+            TimeSheet.TaskID = $('#CurrentTaskId').val();
+            TimeSheet.UserID = $('#CurrentUser').val();
+            var dateSplit = $('#FromDate').val().split('/');
+            var newDate = dateSplit[2] + '/' + dateSplit[1] + '/' + dateSplit[0];
+            TimeSheet.Period = newDate;
+            TimeSheet.Hours = $('#Hours').val();
+            TimeSheet.Remarks = $('#Remarks').val();
+
+            $.ajax({
+                url: '@Url.Action("Add", "TimeSheet")',
+                type: 'post',
+                data: '{TimeSheet: ' + JSON.stringify(TimeSheet) + '}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (d) {
+                    if (d.ID > 0) {
+                        $(function () {
+                            $("#tasktimesheet").find("tbody").append($("<tr id='myTr" + d.ID + "'>")
+                                .append($("<td style='display:none;'>").text($('#TimeSheetID').val()))
+                                .append($("<td>").text($('#CurrentUserName').val()))
+                                .append($("<td>").text($('#FromDate').val()))
+                                .append($("<td>").text($('#Hours').val()))
+                                .append($("<td>").text($('#Remarks').val()))
+                                .append($("<td>").text("Submitted"))
+                                .append($("<td>").text(" "))
+                                .append($("<td>").text(" "))
+                                .append($("<td>").text(" "))
+                                .append($("<td>").html("<a href='#' class='ui-icon ui-icon-circle-close' onclick='RevokeTimesheet(" + d.ID  + ");' >Delete</a>"))
+                                );
+                            $('#FromDate').val("");
+                            $('#Hours').val("");
+                            $('#Remarks').val("");
+                        });
+                    }
+                },
+                error: function (xhr, textStatus, error) {
+                    alert(xhr.statusText);
+                    alert(textStatus);
+                    alert(error);
+                }
+            });
+        }
+    }
+
+
+
+    function RevokeTimesheet(ID, TaskID, UserID) {
+        if (confirm("Are you sure you want to Revoke selected Timesheet ...?")) {
+            DeleteSheet(ID, TaskID, UserID);
+        }
+        else {
+            return false;
+        }
+    }
+    function DeleteSheet(ID, TaskID, UserID) {
+        var url = '@Url.Content("~/")' + "TimeSheet/Delete";
+        $.post(url, { TimeSheetID: ID }, function (data) {
+            if (data) {
+                $('#myTr' + ID).remove();
+            }
+            else {
+                alert("Cannot be deleted!");
+            }
+        });
+    }
+
+
+</script>

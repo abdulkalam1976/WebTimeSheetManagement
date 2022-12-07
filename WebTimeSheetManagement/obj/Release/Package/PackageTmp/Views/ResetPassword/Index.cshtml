@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutSuperAdmin.cshtml";
+}
+
+
+
+<h3></h3>
+<h3>Users</h3>
+<table id="grid"></table>
+<div id="jqGridPager"></div>
+
+<script>
+    $(function () {
+        $("#grid").jqGrid({
+            url: '@Url.Action("LoadRegisteredUserData", "ResetPassword")',
+            stype: 'GET',
+            dataType: 'json',
+            colNames: ['RegistrationID', 'Name', 'Username', 'Mobileno', 'EmailID', 'ResetPassword'],
+            colModel: [
+              { label: "RegistrationID", name: "RegistrationID", hidden: true },
+                { label: "Name", name: "Name", width: 250, align: "left" },
+              { label: "Username", name: "Username", width: 150, align: "left" },
+              { label: "Mobileno", name: "Mobileno", width: 150, align: "left" },
+              { label: "EmailID", name: "EmailID", width: 250, align: "left" },
+               { name: 'RegistrationID', search: false, index: 'RegistrationID', width: 150, sortable: false, formatter: viewLink },
+            ],
+            loadonce: true,
+            sortname: 'RegistrationID',
+            sortorder: "desc",
+            sortable: true,
+            pager: '#jqGridPager',
+            rowNum: 15,
+            rowList: [15, 25, 35, 50],
+            viewrecords: true,
+            height: 50
+        });
+        $('#grid div:not(.ui-jqgrid-titlebar)').width("100%");
+        $('#load_grid').width("130");
+        $('.ui-jqgrid-bdiv').css('height', window.innerHeight * .65);
+        function viewLink(cellValue, options, rowdata, action) {
+            return "<a href='#' class='btn btn-danger' onclick=ResetPasswordData('" + rowdata.RegistrationID + "'); >Reset Password</a>";
+        }
+        $('#grid').jqGrid('navGrid', '#jqGridPager', { edit: false, add: false, del: false })
+    });
+
+</script>
+
+<script type="text/javascript">
+    function ResetPasswordData(ID) {
+        if (confirm("Are you sure you want to Reset Password ...?")) {
+            ResetPassword(ID);
+        }
+        else {
+            return false;
+        }
+    }
+    function ResetPassword(ID) {
+        var url = '@Url.Content("~/")' + "ResetPassword/ResetUserPasswordProcess";
+        $.post(url, { RegistrationID: ID }, function (data) {
+            if (data) {
+                var $grid = jQuery("#grid");
+                var p = $grid.jqGrid("getGridParam");
+
+                p.datatype = "json";
+                $grid.trigger("reloadGrid");
+            }
+            else {
+                alert("Issue While Update Password");
+            }
+        });
+    }
+</script>

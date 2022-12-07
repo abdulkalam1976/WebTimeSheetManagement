@@ -1,0 +1,185 @@
+﻿
+<div>
+    <input type="hidden" id="CurrentTaskId" name="CurrentTaskId" value="@ViewBag.TaskID" />
+    <input type="hidden" id="CurrentUser" name="CurrentUser" value="@ViewBag.CurrentUser" />
+    <input type="hidden" id="CurrentUserName" name="CurrentUserName" value="@ViewBag.CurrentUserName" />
+</div>
+
+
+<div class="col-lg-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">User Details</div>
+        <div class="panel-body">
+            @{
+                if (Convert.ToInt16(Session["RoleID"]) == 1 )
+                {
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-lg-6">
+                                @Html.Label("Employee", new { @class = "manadatory" })
+                                @Html.DropDownList("EmployeeID", new SelectList(string.Empty, "RegistrationID", "Name"), new { @class = "form-control" })
+                            </div>
+
+                            <div class="col-lg-6" style="position:relative; bottom:-25px">
+                                <a href='#' class='btn btn-info' onclick='SaveEmployee();'>Assign</a>
+                            </div>
+
+                        </div>
+                    </div>
+                }
+            }
+
+
+     
+            <table id="taskassign" class="table table-bordered" style="margin-top:10px;">
+                <thead class="bg-danger text-center text-white">
+                    <tr>
+                        <th>User Name</th>
+                        <th>Assigned date</th>
+                        <th>Assigned By</th>
+                        <th>Revoke</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+    $(document).ready(function () {
+        $.getJSON('@Url.Content("~/")' + "Taskassigned/ListofUsers", function (data) {
+            var items1 = '';
+            items1 += "<option value='" + "" + "'>" + "----Select----" + "</option>";
+            $("#EmployeeID").empty();
+
+            $.each(data, function (i, Employee) {
+                items1 += "<option value='" + Employee.RegistrationID + "'>" + Employee.Name + "</option>";
+            });
+            $('#EmployeeID').html(items1);
+        });
+
+
+        function getAllData() {
+            $.ajax({
+                url: '@Url.Content("~/")' + "/Taskassigned/LoadTaskAssignedData",
+                data: { TaskID: $('#CurrentTaskId').val() },
+                dataType: "json",
+                method: 'POST',
+                success: function (data) {
+                    for (var i = 0; i < data.length; i++) {
+                        $("#taskassign").find("tbody").append($("<tr id='myTr" + data[i].TaskAssignedID + "'>")
+                            .append($("<td style='display:none;'>").text(data[i].Userid))
+                            .append($("<td>").text(data[i].UserName))
+                            .append($("<td>").text(ToJavaScriptDate(data[i].Assigneddate)))
+                            .append($("<td>").text(data[i].AssignedByName))
+                            .append($("<td>").html("<a href='#' class='ui-icon ui-icon-circle-close' onclick='RevokeEmployee(" + data[i].TaskAssignedID + "," + $('#CurrentTaskId').val() + "," + data[i].Userid + ");' >Revoke</a>"))
+                            );
+                    }
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+        }
+
+        getAllData();
+    });
+
+    function ToJavaScriptDate(value) {
+        var pattern = /Date\(([^)]+)\)/;
+        var results = pattern.exec(value);
+        var dt = new Date(parseFloat(results[1]));
+        return dt.getDate() + "/" + (dt.getMonth() + 1) + "/" + dt.getFullYear();
+    }
+
+
+
+</script>
+
+
+<script type="text/javascript">
+
+    function GetCurrentDate() {
+        var dt = new Date();
+        return dt.getDate() + "/" + (dt.getMonth() + 1) + "/" + dt.getFullYear();
+    }
+
+    function Validate() {
+        var t = 'N';
+        $('#taskassign > tbody  > tr').each(function (index, tr) {
+            if ($('#EmployeeID').val() == $(this).find('td').eq(0).text()) {
+                t = "Found";
+            }
+        });
+
+        return t;
+    }
+
+
+    function SaveEmployee() {
+
+        if (Validate() == "Found") {
+            alert("User already asigned");
+            return false;
+        }
+        else {
+            var TaskAssigned = {};
+            TaskAssigned.Taskid = $('#CurrentTaskId').val();
+            TaskAssigned.Userid = $('#EmployeeID').val();
+            TaskAssigned.Assigneddate = new Date();
+            TaskAssigned.Assignedby = $('#CurrentUser').val();
+
+            $.ajax({
+                url: '@Url.Action("Add", "Taskassigned")',
+                type: 'post',
+                data: '{TaskAssigned: ' + JSON.stringify(TaskAssigned) + '}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (d) {
+                    $(function () {
+                        $("#taskassign").find("tbody").append($("<tr id='myTr" + d.ID + "'>")
+                            .append($("<td style='display:none;'>").text($('#EmployeeID').val()))
+                            .append($("<td>").text($("#EmployeeID").find("option:selected").text()))
+                            .append($("<td>").text(GetCurrentDate()))
+                            .append($("<td>").text($('#CurrentUserName').val()))
+                            .append($("<td>").html("<a href='#' class='ui-icon ui-icon-circle-close' onclick='RevokeEmployee(" + d.ID + "," + $('#CurrentTaskId').val() + "," + $('#EmployeeID').val() + ");' >Revoke</a>"))
+                            );
+                    });
+                },
+                error: function (xhr, textStatus, error) {
+                    alert(xhr.statusText);
+                    alert(textStatus);
+                    alert(error);
+                }
+            });
+        }
+    }
+
+
+
+    function RevokeEmployee(ID, TaskID, UserID) {
+        if (confirm("Are you sure you want to Revoke assigned employee ...?")) {
+            DeleteSheet(ID, TaskID, UserID);
+        }
+        else {
+            return false;
+        }
+    }
+    function DeleteSheet(ID, TaskID, UserID) {
+        var url = '@Url.Content("~/")' + "Taskassigned/Delete";
+        $.post(url, { AssignedID: ID, TaskID: TaskID, UserID: UserID }, function (data) {
+            if (data) {
+                $('#myTr' + ID).remove();
+            }
+            else {
+                alert("Cannot be deleted it has Burn data entry!");
+            }
+        });
+    }
+
+
+</script>
+
